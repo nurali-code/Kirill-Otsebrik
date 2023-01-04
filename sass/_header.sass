@@ -1,0 +1,62 @@
+header,
+nav,
+.lang
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+header
+    padding: 40px 120px
+    position: fixed
+    background-color: $black
+    top: 0
+    left: 0
+    z-index: 99999
+    width: 100%
+    .logo
+        font-weight: 600
+        font-size: 24px
+        line-height: 29px
+        letter-spacing: 0.005em
+
+    nav
+        a
+            font-weight: 600
+            font-size: 16px
+            line-height: 19px
+            padding: 4px 0
+            margin: 0 20px
+            border-bottom: 2px solid transparent
+            &.active
+                border-color: #fff
+
+    .lang
+        a
+            font-weight: 600
+            font-size: 16px
+            line-height: 19px
+            padding: 10px 0 10px 12px
+            &.active
+                color: #838387
+                pointer-events: none
+
+    &.fixed
+        padding: 20px 120px
+
+    @media screen and ( max-width: 1500px )
+        padding: 40px 72px
+        &.fixed
+            padding: 20px 72px
+    @media screen and ( max-width: 1100px )
+        padding: 40px 
+        &.fixed
+            padding: 20px 40px
+
+        nav,
+        .lang
+            visibility: hidden
+
+    @media screen and ( max-width: 1100px )
+        padding: 20px 
+        &.fixed
+            padding: 20px 16px
