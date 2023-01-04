@@ -226,7 +226,7 @@ body {
 
 main,
 section {
-  padding: 0 120px;
+  padding: 80px 120px;
   position: relative;
 }
 
@@ -390,13 +390,13 @@ hr {
 @media screen and (max-width: 1500px) {
   main,
 section {
-    padding: 0 72px;
+    padding: 80px 72px;
   }
 }
 @media screen and (max-width: 1100px) {
   main,
 section {
-    padding: 0 40px;
+    padding: 100px 40px;
   }
   h3 {
     font-weight: 500;
@@ -415,7 +415,7 @@ section {
 @media screen and (max-width: 700px) {
   main,
 section {
-    padding: 0 16px;
+    padding: 60px 16px;
   }
   p {
     font-size: 16px;
@@ -470,8 +470,11 @@ header nav a {
   margin: 0 20px;
   border-bottom: 2px solid transparent;
 }
-header nav a.active {
+header nav a.active, header nav a:hover {
   border-color: #fff;
+}
+header .menu {
+  display: none;
 }
 header .lang a {
   font-weight: 600;
@@ -484,6 +487,9 @@ header .lang a.active {
   pointer-events: none;
 }
 header.fixed {
+  background-color: rgba(7, 8, 15, 0.7);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
   padding: 20px 120px;
 }
 @media screen and (max-width: 1500px) {
@@ -503,15 +509,90 @@ header.fixed {
   }
   header nav,
 header .lang {
+    display: none;
     visibility: hidden;
   }
+  header .menu {
+    width: 28px;
+    height: 19px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  header .menu span {
+    width: 90%;
+    display: block;
+    height: 2px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+         -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+    background-color: #fff;
+  }
+  header .menu span::before, header .menu span::after {
+    content: "";
+    display: block;
+    width: 28px;
+    right: 0;
+    background-color: #fff;
+    height: 2px;
+    position: absolute;
+    top: -8px;
+  }
+  header .menu span::after {
+    top: 8px;
+  }
+  header.active {
+    height: 100vh;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  header.active .logo,
+header.active .menu {
+    -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
+  }
+  header.active .menu {
+    margin-top: 5px;
+  }
+  header.active nav,
+header.active .lang {
+    display: block;
+    visibility: visible;
+  }
+  header.active .lang {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    -webkit-align-self: flex-end;
+        -ms-flex-item-align: end;
+            align-self: flex-end;
+  }
+  header.active .lang a {
+    padding: 10px;
+  }
+  header.active nav {
+    display: block;
+    width: 100%;
+  }
+  header.active nav a {
+    text-align: center;
+    border: none;
+    display: block;
+  }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 700px) {
   header {
     padding: 20px;
   }
   header.fixed {
-    padding: 20px 16px;
+    padding: 10px 16px;
   }
 }
 
@@ -582,10 +663,9 @@ footer .wrap a {
 }
 
 .main {
-  min-height: 800px;
+  min-height: 920px;
   height: 100vh;
-  max-height: 1280px;
-  padding-top: 100px;
+  max-height: 1480px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -668,6 +748,7 @@ footer .wrap a {
   margin: 0 auto 60px;
 }
 .item img {
+  width: 100%;
   -webkit-transition: 0.6s ease all;
   -o-transition: 0.6s ease all;
   -moz-transition: 0.6s ease all;
@@ -743,7 +824,6 @@ footer .wrap a {
 }
 
 .card {
-  padding-top: 200px;
   overflow: hidden;
 }
 .card::after {
@@ -751,7 +831,7 @@ footer .wrap a {
   display: block;
   width: 100vw;
   height: 500px;
-  margin: 160px 0 0;
+  margin: 0;
   position: relative;
   z-index: -1;
   left: -120px;
@@ -772,6 +852,7 @@ footer .wrap a {
      -moz-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  margin: 160px 0;
 }
 .title-wrap .col {
   width: 41%;
@@ -787,6 +868,7 @@ footer .wrap a {
   .main {
     height: unset;
     max-height: unset;
+    padding-top: 120px;
   }
   .main ul {
     width: 100%;

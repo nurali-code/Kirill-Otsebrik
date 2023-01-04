@@ -27,8 +27,12 @@ header
             padding: 4px 0
             margin: 0 20px
             border-bottom: 2px solid transparent
-            &.active
+            &.active,
+            &:hover
                 border-color: #fff
+
+    .menu
+        display: none
 
     .lang
         a
@@ -41,22 +45,85 @@ header
                 pointer-events: none
 
     &.fixed
+        background-color: rgba($black, .7)
+        backdrop-filter: blur(8px)
         padding: 20px 120px
 
     @media screen and ( max-width: 1500px )
         padding: 40px 72px
         &.fixed
             padding: 20px 72px
+
     @media screen and ( max-width: 1100px )
-        padding: 40px 
+        padding: 40px
         &.fixed
             padding: 20px 40px
 
         nav,
         .lang
+            display: none
             visibility: hidden
 
-    @media screen and ( max-width: 1100px )
-        padding: 20px 
+        .menu
+            width: 28px
+            height: 19px
+            display: inline-block
+            position: relative
+            z-index: 1
+            span
+                width: 90%
+                display: block
+                height: 2px
+                position: absolute
+                right: 0
+                top: 50%
+                transform: translateY(-50%)
+                background-color: #fff
+                &::before,
+                &::after
+                    content: ''
+                    display: block
+                    width: 28px
+                    right: 0
+                    background-color: #fff
+                    height: 2px
+                    position: absolute
+                    top: -8px
+                &::after
+                    top: 8px
+
+        &.active
+            height: 100vh
+            flex-wrap: wrap
+
+            .logo,
+            .menu
+                align-self: flex-start
+            .menu
+                margin-top: 5px
+
+            nav,
+            .lang
+                display: block
+                visibility: visible
+
+            .lang
+                width: 100%
+                text-align: center
+                margin: 0 auto
+                align-self: flex-end
+                a 
+                    padding: 10px 
+
+            nav
+                display: block
+                width: 100%
+                a
+                    text-align: center
+                    border: none
+                    display: block
+
+    @media screen and ( max-width: 700px )
+        padding: 20px
         &.fixed
-            padding: 20px 16px
+            padding: 10px 16px

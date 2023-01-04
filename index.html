@@ -10,28 +10,30 @@
 </head>
 
 <body>
-    <header class="fixed">
+    <header class="fixed active">
         <a href="./index.html" class="logo">OTSEBRIK</a>
+        <button class="menu"><span></span></button>
         <nav>
-            <a href="#" class="active">ABOUT</a>
-            <a href="#">PROJECTS</a>
+            <a href="#main" class="active">ABOUT</a>
+            <a href="#projects">PROJECTS</a>
             <a href="#">RESUME</a>
         </nav>
         <div class="lang">
-            <a href="#" class="active">EN</a>
-            <a href="#">RU</a>
+            <a href="" class="active">EN</a>
+            <a href="">RU</a>
         </div>
-
     </header>
 
-    <main class="main">
+    <main class="main" id="main">
         <div class="container wrap">
             <img data-src="./img/kiril.jpg" loading="lazy" alt="kiril">
             <div class="title">
                 <h1>Kirill Otsebrik</h1>
-                <p>Hi, I've been doing UX/UI design and mobile app design for 5+ years, I love creating truly
+                <p>
+                    Hi, I've been doing UX/UI design and mobile app design for 5+ years, I love creating truly
                     beautiful
-                    and usable interfaces/sites/landings</p>
+                    and usable interfaces/sites/landings
+                </p>
                 <h4>Hard skills:</h4>
                 <div class="wrap tags">
                     <span>Figma</span>
@@ -67,7 +69,8 @@
             </div>
         </div>
     </main>
-    <section>
+
+    <section id="projects">
         <div class="container">
             <a href="./card.html" class="item">
                 <img data-src="./img/item.jpg" loading="lazy" alt="item">
@@ -124,6 +127,34 @@
                 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js';
             document.body.appendChild(script);
         }
+
+
+        var links = document.querySelectorAll('a[href^="#"]'),
+            menu = document.querySelector('.menu');
+
+        // for (let a = 0; a < btn.length; a++) {
+        //     btn[a].onclick = () => {
+        //         if (btn[a].classList.contains('active')) {
+        //             btn[a].classList.remove('active');
+        //             content[a].classList.remove('active');
+        //         } else {
+        //             btn[a].classList.add('active');
+        //             content[a].classList.add('active');
+        //         }
+        //     }
+        // };
+
+        links.forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                links.forEach((e) => {e.classList.remove('active')})
+                this.classList.add('active');
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
     </script>
 
 </body>
