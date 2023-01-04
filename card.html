@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirill Otsebrik</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="fixed">
+        <a href="./index.html" class="logo">OTSEBRIK</a>
+        <nav>
+            <a href="#" class="active">ABOUT</a>
+            <a href="#">PROJECTS</a>
+            <a href="#">RESUME</a>
+        </nav>
+        <div class="lang">
+            <a href="#" class="active">EN</a>
+            <a href="#">RU</a>
+        </div>
+
+    </header>
+
+    <section class="card">
+        <div class="title-wrap">
+            <div class="col">
+                <h1 class="headline">Overview</h1>
+            </div>
+            <div class="col">
+                <p>
+                    Snabzhenits — cashback service for businesses, which helps businesses save on purchases of building
+                    materials and return for them up to 30% of the money from each purchase
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="title-wrap">
+            <div class="col">
+                <h2 class="headline">Task</h2>
+            </div>
+            <div class="col">
+                <p>
+                    To develop a modern and convenient web service where the customer could arrange for the goods with
+                    delivery and get a cashback for their purchases, via phone or computer
+                </p>
+                <ul>
+                    <li>It has been done:</li>
+                    <li>Web service with online store capability</li>
+                    <li>10 unique interior pages</li>
+                    <li>Landing page</li>
+                    <li>User's personal cabinet</li>
+                    <li>All adapted for the phone</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <img data-src="img/heart.png" loading="lazy" alt="heart">
+        <p class="text">If you are thinking about hiring me or would like to discuss a project, get in touch with me</p>
+        <nav class="wrap">
+            <a href="#" target="_blank">FACEBOOK</a>
+            <a href="#" target="_blank">VK</a>
+            <a href="#" target="_blank">INSTAGRAM</a>
+            <a href="#" target="_blank">GMAIL</a>
+            <a href="#" target="_blank">BEHANCE</a>
+        </nav>
+        <p class="descr">
+            UX/UI Design
+            <br>
+            <br>
+            Moscow · Remote
+        </p>
+    </footer>
+
+    <script>
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Dynamically import the LazySizes library
+            const script = document.createElement('script');
+            script.src =
+                'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
+    </script>
+
+</body>
+
+</html>

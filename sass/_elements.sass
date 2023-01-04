@@ -17,7 +17,11 @@ body
     flex-direction: column
     background-color: $black
     font-family: 'Inter', sans-serif
+
+main,
+section
     padding: 0 120px
+    position: relative
 
 .container
     width: 100%
@@ -46,10 +50,6 @@ button
     &:hover
         opacity: .8
 
-section
-    padding: 100px 0
-    position: relative
-
 .logo
     max-width: 230px
 
@@ -72,11 +72,13 @@ section
         background-color: #fff
         opacity: .4
 
-.wrapper, .wrap
+.title-wrap, .wrap
     display: flex
     justify-content: space-between
     align-items: center
     flex-wrap: wrap
+
+
 
 ol
     padding: 0 0 0 25px
@@ -121,17 +123,25 @@ h4
     line-height: 140%
     margin: 32px 0 12px 0
 
+.headline
+    font-weight: 700
+    font-size: 50px
+    line-height: 61px
+    margin: 0 0 24px
+
 hr
     background-color: rgba(255, 255, 255, .3)
     height: 1px
     margin: 20px 0 20px
 
 @media screen and ( max-width: 1500px )
-    body
+    main,
+    section
         padding: 0 72px
 
 @media screen and ( max-width: 1100px )
-    body
+    main,
+    section
         padding: 0 40px
 
     h3
@@ -146,7 +156,8 @@ hr
         border-radius: 8px
 
 @media screen and ( max-width: 700px )
-    body
+    main,
+    section
         padding: 0 16px
     p
         font-size: 16px

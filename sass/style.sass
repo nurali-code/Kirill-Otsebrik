@@ -89,6 +89,33 @@
                 opacity: 1
                 transform: translateY(0px)
 
+.card
+    padding-top: 200px
+    overflow: hidden
+    &::after
+        content: ''
+        display: block
+        width: 100vw
+        height: 500px
+        margin: 160px 0 0
+        position: relative
+        z-index: -1
+        left: -120px
+        background-color: #FF9A8B
+        background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%)
+
+.title
+    &-wrap
+        flex-wrap: wrap
+        align-items: flex-start
+        .col
+            width: 41%
+        p
+            margin-bottom: 24px
+
+        ul
+            opacity: .6
+
 @media screen and ( max-width: 1100px )
     .main
         height: unset
@@ -96,10 +123,10 @@
         ul
             width: 100%
 
-    .item 
+    .item
         border-radius: 8px
         margin-bottom: 40px
-        img 
+        img
             margin-bottom: 16px
 
 @media screen and ( max-width: 700px )
@@ -126,7 +153,7 @@
             font-size: 16px
 
     .item
-        img 
+        img
             margin-bottom: 16px
         .title
             position: static

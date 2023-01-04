@@ -222,7 +222,12 @@ body {
           flex-direction: column;
   background-color: #07080F;
   font-family: "Inter", sans-serif;
+}
+
+main,
+section {
   padding: 0 120px;
+  position: relative;
 }
 
 .container {
@@ -268,11 +273,6 @@ button:hover {
   opacity: 0.8;
 }
 
-section {
-  padding: 100px 0;
-  position: relative;
-}
-
 .logo {
   max-width: 230px;
 }
@@ -301,7 +301,7 @@ section {
   opacity: 0.4;
 }
 
-.wrapper, .wrap {
+.title-wrap, .wrap {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -374,6 +374,13 @@ h4 {
   margin: 32px 0 12px 0;
 }
 
+.headline {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 61px;
+  margin: 0 0 24px;
+}
+
 hr {
   background-color: rgba(255, 255, 255, 0.3);
   height: 1px;
@@ -381,12 +388,14 @@ hr {
 }
 
 @media screen and (max-width: 1500px) {
-  body {
+  main,
+section {
     padding: 0 72px;
   }
 }
 @media screen and (max-width: 1100px) {
-  body {
+  main,
+section {
     padding: 0 40px;
   }
   h3 {
@@ -404,7 +413,8 @@ hr {
   }
 }
 @media screen and (max-width: 700px) {
-  body {
+  main,
+section {
     padding: 0 16px;
   }
   p {
@@ -508,7 +518,7 @@ header .lang {
 footer {
   text-align: center;
   max-width: 750px;
-  margin: 0 auto;
+  margin: auto auto 0;
   padding: 100px 0;
 }
 footer img {
@@ -730,6 +740,47 @@ footer .wrap a {
          -o-transform: translateY(0px);
             transform: translateY(0px);
   }
+}
+
+.card {
+  padding-top: 200px;
+  overflow: hidden;
+}
+.card::after {
+  content: "";
+  display: block;
+  width: 100vw;
+  height: 500px;
+  margin: 160px 0 0;
+  position: relative;
+  z-index: -1;
+  left: -120px;
+  background-color: #FF9A8B;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FF9A8B), color-stop(55%, #FF6A88), to(#FF99AC));
+  background-image: -webkit-linear-gradient(left, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+  background-image: -moz-linear-gradient(left, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+  background-image: -o-linear-gradient(left, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+  background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+}
+
+.title-wrap {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.title-wrap .col {
+  width: 41%;
+}
+.title-wrap p {
+  margin-bottom: 24px;
+}
+.title-wrap ul {
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 1100px) {
