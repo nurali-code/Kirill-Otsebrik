@@ -239,6 +239,7 @@ section {
 }
 
 img, picture, svg {
+  width: 100%;
   max-width: 100%;
   -webkit-border-radius: 16px;
      -moz-border-radius: 16px;
@@ -502,10 +503,20 @@ header.fixed {
 }
 @media screen and (max-width: 1100px) {
   header {
-    padding: 40px;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    padding: 30px 40px;
+    height: 69px;
   }
   header.fixed {
     padding: 20px 40px;
+  }
+  header .logo {
+    -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
   }
   header nav,
 header .lang {
@@ -514,9 +525,12 @@ header .lang {
   }
   header .menu {
     width: 28px;
-    height: 19px;
+    height: 29px;
     display: inline-block;
     position: relative;
+    -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
     z-index: 1;
   }
   header .menu span {
@@ -532,8 +546,16 @@ header .lang {
          -o-transform: translateY(-50%);
             transform: translateY(-50%);
     background-color: #fff;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    transition: all ease 0.3s;
   }
   header .menu span::before, header .menu span::after {
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    transition: all ease 0.3s;
     content: "";
     display: block;
     width: 28px;
@@ -546,20 +568,30 @@ header .lang {
   header .menu span::after {
     top: 8px;
   }
+  header .menu.active span {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  header .menu.active span::before {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  header .menu.active span::after {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
   header.active {
     height: 100vh;
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-  }
-  header.active .logo,
-header.active .menu {
-    -webkit-align-self: flex-start;
-        -ms-flex-item-align: start;
-            align-self: flex-start;
-  }
-  header.active .menu {
-    margin-top: 5px;
   }
   header.active nav,
 header.active .lang {
@@ -569,10 +601,11 @@ header.active .lang {
   header.active .lang {
     width: 100%;
     text-align: center;
-    margin: 0 auto;
     -webkit-align-self: flex-end;
         -ms-flex-item-align: end;
             align-self: flex-end;
+    margin: 0 auto;
+    padding-bottom: 30px;
   }
   header.active .lang a {
     padding: 10px;
@@ -585,10 +618,18 @@ header.active .lang {
     text-align: center;
     border: none;
     display: block;
+    padding: 15px;
+    font-size: 20px;
+  }
+  header.active nav a.active, header.active nav a:hover {
+    opacity: 1;
+    background-color: #fff;
+    color: #000;
   }
 }
 @media screen and (max-width: 700px) {
   header {
+    height: 49px;
     padding: 20px;
   }
   header.fixed {
@@ -600,7 +641,7 @@ footer {
   text-align: center;
   max-width: 750px;
   margin: auto auto 0;
-  padding: 100px 0;
+  padding: 180px 0;
 }
 footer img {
   max-width: 220px;
@@ -641,7 +682,7 @@ footer .wrap a {
 }
 @media screen and (max-width: 700px) {
   footer {
-    padding: 60px 0;
+    padding: 60px 16px;
   }
   footer img {
     max-width: 152px;
@@ -663,9 +704,7 @@ footer .wrap a {
 }
 
 .main {
-  min-height: 920px;
-  height: 100vh;
-  max-height: 1480px;
+  min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -864,6 +903,25 @@ footer .wrap a {
   opacity: 0.6;
 }
 
+.info img {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.info img:last-of-type {
+  margin-bottom: 0;
+}
+.info .col {
+  width: 49%;
+}
+
+@media screen and (max-width: 1500px) {
+  .card {
+    overflow: hidden;
+  }
+  .card::after {
+    left: -72px;
+  }
+}
 @media screen and (max-width: 1100px) {
   .main {
     height: unset;
@@ -899,7 +957,7 @@ footer .wrap a {
        object-fit: cover;
     -o-object-position: top center;
        object-position: top center;
-    object-view-box: inset(6% 9% 0% 17%);
+    object-view-box: inset(5% 10% 0% 24%);
     margin-bottom: 16px;
   }
   .main ul {

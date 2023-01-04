@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kirill Otsebrik</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -14,8 +17,8 @@
         <a href="./index.html" class="logo">OTSEBRIK</a>
         <button class="menu"><span></span></button>
         <nav>
-            <a href="#">ABOUT</a>
-            <a href="#">PROJECTS</a>
+            <a href="./index.html#main" class="active">ABOUT</a>
+            <a href="./index.html#projects">PROJECTS</a>
             <a href="#">RESUME</a>
         </nav>
         <div class="lang">
@@ -64,6 +67,28 @@
 
     </section>
 
+    <section class="info">
+        <h2 class="headline">Internal pages</h2>
+        <div class="wrap">
+            <div class="col">
+                <img alt="img" data-src="./img/i-1.jpg" loading="lazy">
+                <img alt="img" data-src="./img/i-2.jpg" loading="lazy">
+                <img alt="img" data-src="./img/i-3.jpg" loading="lazy">
+            </div>
+            <div class="col">
+                <img alt="img" data-src="./img/i-4.jpg" loading="lazy">
+                <img alt="img" data-src="./img/i-5.jpg" loading="lazy">
+                <img alt="img" data-src="./img/i-6.jpg" loading="lazy">
+                <img alt="img" data-src="./img/i-7.jpg" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section class="info">
+        <h2 class="headline">Adaptives</h2>
+        <img alt="img" data-src="./img/i-8.jpg" loading="lazy">
+    </section>
+
     <footer>
         <img data-src="img/heart.png" loading="lazy" alt="heart">
         <p class="text">If you are thinking about hiring me or would like to discuss a project, get in touch with me
@@ -83,7 +108,12 @@
         </p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
     <script>
+        AOS.init();
+
         if ('loading' in HTMLImageElement.prototype) {
             const images = document.querySelectorAll('img[loading="lazy"]');
             images.forEach(img => {
@@ -96,6 +126,27 @@
                 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js';
             document.body.appendChild(script);
         }
+
+
+        var links = document.querySelectorAll('a[href^="#"]'),
+            menu = document.querySelector('.menu');
+
+        menu.addEventListener('click', function () {
+            this.classList.toggle('active')
+            document.querySelector('header').classList.toggle('active')
+        })
+
+        links.forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                links.forEach((e) => { e.classList.remove('active') })
+                this.classList.add('active');
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
     </script>
 
 </body>

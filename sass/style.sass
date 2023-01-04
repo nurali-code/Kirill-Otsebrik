@@ -4,9 +4,8 @@
 @import 'footer'
 
 .main
-    min-height: 920px
-    height: 100vh
-    max-height: 1480px
+    min-height: 100vh
+    // max-height: 1480px
     // padding-top: 100px
     display: flex
     justify-content: center
@@ -118,6 +117,22 @@
         ul
             opacity: .6
 
+.info
+    img
+        width: 100%
+        margin-bottom: 30px
+        &:last-of-type
+            margin-bottom: 0
+
+    .col
+        width: 49%
+
+@media screen and ( max-width: 1500px )
+    .card
+        overflow: hidden
+        &::after
+            left: -72px
+
 @media screen and ( max-width: 1100px )
     .main
         height: unset
@@ -145,7 +160,7 @@
             height: 100px
             object-fit: cover
             object-position: top center
-            object-view-box: inset(6% 9% 0% 17%)
+            object-view-box: inset(5% 10% 0% 24%)
             margin-bottom: 16px
 
         ul
