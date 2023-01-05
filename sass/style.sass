@@ -111,10 +111,13 @@
         margin: 160px 0
         .col
             width: 41%
+       
         p
             margin-bottom: 24px
 
-        ul
+        .descr
+            margin-bottom: 5px
+        ul, .descr
             opacity: .6
 
 .info
@@ -150,7 +153,6 @@
             margin-bottom: 16px
 
     .card
-        overflow: hidden
         padding-top: 150px
         &::after
             left: -40px
@@ -160,7 +162,9 @@
         &-wrap
             margin: 0 0 100px
             .col
-                width: 48%
+                width: 42%
+                &:last-of-type
+                    width: 54%
 
     .tags
         span
@@ -191,3 +195,29 @@
         .title
             position: static
             visibility: visible
+
+    .card
+        padding-top: 120px
+        &::after
+            left: -16px
+
+    .title
+        &-wrap
+            margin: 0 0 80px
+            display: block
+            .col
+                width: 100% !important
+
+            p
+                margin-bottom: 16px
+
+    .info
+        padding: 40px 16px
+        .wrap 
+            display: block
+
+        img 
+            margin-bottom: 24px !important
+
+        .col 
+            width: 100%

@@ -414,6 +414,8 @@ section {
   }
   .headline {
     font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 16px;
   }
   ol li, ul li {
     font-size: 16px;
@@ -950,7 +952,10 @@ footer .wrap a {
 .title-wrap p {
   margin-bottom: 24px;
 }
-.title-wrap ul {
+.title-wrap .descr {
+  margin-bottom: 5px;
+}
+.title-wrap ul, .title-wrap .descr {
   opacity: 0.6;
 }
 
@@ -992,7 +997,6 @@ footer .wrap a {
     margin-bottom: 16px;
   }
   .card {
-    overflow: hidden;
     padding-top: 150px;
   }
   .card::after {
@@ -1003,7 +1007,10 @@ footer .wrap a {
     margin: 0 0 100px;
   }
   .title-wrap .col {
-    width: 48%;
+    width: 42%;
+  }
+  .title-wrap .col:last-of-type {
+    width: 54%;
   }
   .tags span {
     font-size: 16px;
@@ -1037,5 +1044,33 @@ footer .wrap a {
   .item .title {
     position: static;
     visibility: visible;
+  }
+  .card {
+    padding-top: 120px;
+  }
+  .card::after {
+    left: -16px;
+  }
+  .title-wrap {
+    margin: 0 0 80px;
+    display: block;
+  }
+  .title-wrap .col {
+    width: 100% !important;
+  }
+  .title-wrap p {
+    margin-bottom: 16px;
+  }
+  .info {
+    padding: 40px 16px;
+  }
+  .info .wrap {
+    display: block;
+  }
+  .info img {
+    margin-bottom: 24px !important;
+  }
+  .info .col {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
