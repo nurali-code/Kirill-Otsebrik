@@ -787,7 +787,7 @@ footer .wrap a {
       -ms-flex-align: start;
           align-items: flex-start;
 }
-.main img {
+.main picture {
   width: 38%;
 }
 .main .title {
@@ -1025,14 +1025,11 @@ footer .wrap a {
   .main .title {
     width: 100%;
   }
-  .main img {
+  .main picture {
     width: 100px;
     height: 100px;
     -o-object-fit: cover;
        object-fit: cover;
-    -o-object-position: top center;
-       object-position: top center;
-    object-view-box: inset(5% 10% 0% 24%);
     margin-bottom: 16px;
   }
   .main ul {
