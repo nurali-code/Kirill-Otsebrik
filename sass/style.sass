@@ -128,8 +128,10 @@
         width: 49%
 
 @media screen and ( max-width: 1500px )
+    .main
+        padding-top: 120px
+
     .card
-        overflow: hidden
         &::after
             left: -72px
 
@@ -146,6 +148,23 @@
         margin-bottom: 40px
         img
             margin-bottom: 16px
+
+    .card
+        overflow: hidden
+        padding-top: 150px
+        &::after
+            left: -40px
+            height: 300px
+
+    .title
+        &-wrap
+            margin: 0 0 100px
+            .col
+                width: 48%
+
+    .tags
+        span
+            font-size: 16px
 
 @media screen and ( max-width: 700px )
     .main
@@ -165,10 +184,6 @@
 
         ul
             max-width: 260px
-
-    .tags
-        span
-            font-size: 16px
 
     .item
         img

@@ -241,10 +241,10 @@ section {
 img, picture, svg {
   width: 100%;
   max-width: 100%;
+  display: block;
   -webkit-border-radius: 16px;
      -moz-border-radius: 16px;
           border-radius: 16px;
-  display: block;
 }
 
 .subheading {
@@ -397,7 +397,7 @@ section {
 @media screen and (max-width: 1100px) {
   main,
 section {
-    padding: 100px 40px;
+    padding: 40px;
   }
   h3 {
     font-weight: 500;
@@ -405,12 +405,18 @@ section {
     margin-bottom: 4px;
   }
   p {
-    font-size: 18px;
+    font-size: 16px;
   }
   img {
     -webkit-border-radius: 8px;
        -moz-border-radius: 8px;
             border-radius: 8px;
+  }
+  .headline {
+    font-size: 40px;
+  }
+  ol li, ul li {
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -418,14 +424,8 @@ section {
 section {
     padding: 60px 16px;
   }
-  p {
-    font-size: 16px;
-  }
   h3 {
     font-size: 24px;
-  }
-  ol li, ul li {
-    font-size: 16px;
   }
 }
 header,
@@ -492,9 +492,6 @@ header .lang a.active {
 }
 @media screen and (max-width: 1500px) {
   header {
-    padding: 40px 72px;
-  }
-  header.fixed {
     padding: 20px 72px;
   }
 }
@@ -695,7 +692,7 @@ footer {
   text-align: center;
   max-width: 750px;
   margin: auto auto 0;
-  padding: 180px 0;
+  padding: 100px 0;
 }
 footer img {
   max-width: 220px;
@@ -969,8 +966,8 @@ footer .wrap a {
 }
 
 @media screen and (max-width: 1500px) {
-  .card {
-    overflow: hidden;
+  .main {
+    padding-top: 120px;
   }
   .card::after {
     left: -72px;
@@ -994,6 +991,23 @@ footer .wrap a {
   .item img {
     margin-bottom: 16px;
   }
+  .card {
+    overflow: hidden;
+    padding-top: 150px;
+  }
+  .card::after {
+    left: -40px;
+    height: 300px;
+  }
+  .title-wrap {
+    margin: 0 0 100px;
+  }
+  .title-wrap .col {
+    width: 48%;
+  }
+  .tags span {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 700px) {
   .main h1 {
@@ -1016,9 +1030,6 @@ footer .wrap a {
   }
   .main ul {
     max-width: 260px;
-  }
-  .tags span {
-    font-size: 16px;
   }
   .item img {
     margin-bottom: 16px;

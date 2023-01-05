@@ -6,11 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kirill Otsebrik</title>
-    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
-
     <link rel="stylesheet" href="./css/style.css">
-
-
 </head>
 
 <body>
@@ -32,14 +28,14 @@
         <div class="container wrap">
             <img data-src="./img/kiril.jpg" data-aos="fade-up" loading="lazy" alt="kiril">
             <div class="title">
-                <h1 data-aos="fade-up" data-aos-delay="300">Kirill Otsebrik</h1>
+                <h1 data-aos="fade-up" data-aos-delay="200">Kirill Otsebrik</h1>
                 <p data-aos="fade-up" data-aos-delay="300">
                     Hi, I've been doing UX/UI design and mobile app design for 5+ years, I love creating truly
                     beautiful
                     and usable interfaces/sites/landings
                 </p>
-                <h4 data-aos="fade-up" data-aos-delay="600">Hard skills:</h4>
-                <div data-aos="fade-up" data-aos-delay="600" class="wrap tags">
+                <h4 data-aos="fade-up" data-aos-delay="400">Hard skills:</h4>
+                <div data-aos="fade-up" data-aos-delay="500" class="wrap tags">
                     <span>Figma</span>
                     <span>Adobe Photoshop</span>
                     <span>Adobe XD</span>
@@ -57,14 +53,14 @@
                     <span>Creating logos</span>
                     <span>Creating banners</span>
                 </div>
-                <h4 data-aos="fade-up" data-aos-delay="700">Soft skills:</h4>
+                <h4 data-aos="fade-up" data-aos-delay="600">Soft skills:</h4>
                 <div class="wrap">
-                    <ul data-aos="fade-up" data-aos-delay="800">
+                    <ul data-aos="fade-up" data-aos-delay="700">
                         <li>Open to new ideas</li>
                         <li>I always find common language with people</li>
                         <li>Experienced in working with customers and performers</li>
                     </ul>
-                    <ul data-aos="fade-up" data-aos-delay="900">
+                    <ul data-aos="fade-up" data-aos-delay="800">
                         <li>Bring the work to the end</li>
                         <li>Adequately perceive criticism, other people's opinions</li>
                         <li>Can work in a team</li>
@@ -76,21 +72,21 @@
 
     <section id="projects">
         <div class="container">
-            <a href="./card.html" data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="item">
+            <a href="./card.html" data-aos="fade-up" class="item">
                 <img data-src="./img/item.jpg" loading="lazy" alt="item">
                 <div class="title">
                     <h3>Puzzel Lend</h3>
                     <p>Decentralized financial services</p>
                 </div>
             </a>
-            <a href="./card.html" data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="item">
+            <a href="./card.html" data-aos="fade-up" class="item">
                 <img data-src="./img/item.jpg" loading="lazy" alt="item">
                 <div class="title">
                     <h3>Puzzel Lend</h3>
                     <p>Decentralized financial services</p>
                 </div>
             </a>
-            <a href="./card.html" data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="item">
+            <a href="./card.html" data-aos="fade-up" class="item">
                 <img data-src="./img/item.jpg" loading="lazy" alt="item">
                 <div class="title">
                     <h3>Puzzel Lend</h3>
@@ -101,23 +97,25 @@
     </section>
 
     <footer>
-        <img data-src="img/heart.png" loading="lazy" alt="heart">
-        <p class="text">If you are thinking about hiring me or would like to discuss a project, get in touch with me</p>
-        <nav class="wrap">
+        <img data-src="img/heart.png" data-aos="fade-up" loading="lazy" alt="heart">
+        <p class="text" data-aos="fade-up" data-aos-delay="100">If you are thinking about hiring me or would like to
+            discuss a project, get
+            in touch with me</p>
+        <nav class="wrap" data-aos="fade-up" data-aos-delay="200">
             <a href="#" target="_blank">FACEBOOK</a>
             <a href="#" target="_blank">VK</a>
             <a href="#" target="_blank">INSTAGRAM</a>
             <a href="#" target="_blank">GMAIL</a>
             <a href="#" target="_blank">BEHANCE</a>
         </nav>
-        <p class="descr">
+        <p class="descr" data-aos="fade-up" data-aos-delay="300">
             UX/UI Design
             <br>
             <br>
             Moscow · Remote
         </p>
     </footer>
-    
+
     <script>
         if (window.innerWidth >= 1100) {
             const SCRIPT_AOS = document.createElement('script'),
@@ -125,12 +123,18 @@
 
             CSS_AOS.type = "text/css";;
             CSS_AOS.rel = 'stylesheet';
-            CSS_AOS.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
+            CSS_AOS.href = "https://unpkg.com/aos@next/dist/aos.css";
             document.getElementsByTagName("head")[0].appendChild(CSS_AOS);
 
-            SCRIPT_AOS.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+            SCRIPT_AOS.src = 'https://unpkg.com/aos@next/dist/aos.js';
             document.body.appendChild(SCRIPT_AOS);
-            SCRIPT_AOS.onload = () => { AOS.init(); }
+            SCRIPT_AOS.onload = () => {
+                AOS.init({
+                    duration: 400,
+                    mirror: true,
+                    offset: 50,
+                });
+            }
 
         } else { false }
 

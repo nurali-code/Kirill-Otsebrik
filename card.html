@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kirill Otsebrik</title>
-
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -27,12 +25,12 @@
 
     </header>
 
-    <section class="card">
+    <section class="card" data-aos="fade-up" data-aos-delay="200">
         <div class="title-wrap">
-            <div class="col">
-                <h1 class="headline">Overview</h1>
+            <div class="col" data-aos="fade-up" data-aos-delay="300">
+                <h1 class="headline" >Overview</h1>
             </div>
-            <div class="col">
+            <div class="col" data-aos="fade-up" data-aos-delay="400">
                 <p>
                     Snabzhenits — cashback service for businesses, which helps businesses save on purchases of building
                     materials and return for them up to 30% of the money from each purchase
@@ -43,10 +41,10 @@
 
     <section>
         <div class="title-wrap">
-            <div class="col">
+            <div class="col" data-aos="fade-up">
                 <h2 class="headline">Task</h2>
             </div>
-            <div class="col">
+            <div class="col" data-aos="fade-up" data-aos-delay="200">
                 <p>
                     To develop a modern and convenient web service where the customer could arrange for the goods with
                     delivery and get a cashback for their purchases, via phone or computer
@@ -62,44 +60,45 @@
             </div>
         </div>
 
-        <img data-src="./img/item-2.jpg" loading="lazy" alt="item">
+        <img data-src="./img/item-2.jpg" data-aos="fade-up" data-aos-delay="200" loading="lazy" alt="item">
 
     </section>
 
     <section class="info">
-        <h2 class="headline">Internal pages</h2>
+        <h2 class="headline" data-aos="fade-up">Internal pages</h2>
         <div class="wrap">
             <div class="col">
-                <img alt="img" data-src="./img/i-1.jpg" loading="lazy">
-                <img alt="img" data-src="./img/i-2.jpg" loading="lazy">
-                <img alt="img" data-src="./img/i-3.jpg" loading="lazy">
+                <img alt="img" data-src="./img/i-1.jpg" loading="lazy" data-aos="fade-up">
+                <img alt="img" data-src="./img/i-2.jpg" loading="lazy" data-aos="fade-up">
+                <img alt="img" data-src="./img/i-3.jpg" loading="lazy" data-aos="fade-up">
             </div>
             <div class="col">
-                <img alt="img" data-src="./img/i-4.jpg" loading="lazy">
-                <img alt="img" data-src="./img/i-5.jpg" loading="lazy">
-                <img alt="img" data-src="./img/i-6.jpg" loading="lazy">
-                <img alt="img" data-src="./img/i-7.jpg" loading="lazy">
+                <img alt="img" data-src="./img/i-4.jpg" loading="lazy" data-aos="fade-up">
+                <img alt="img" data-src="./img/i-5.jpg" loading="lazy" data-aos="fade-up">
+                <img alt="img" data-src="./img/i-6.jpg" loading="lazy" data-aos="fade-up">
+                <img alt="img" data-src="./img/i-7.jpg" loading="lazy" data-aos="fade-up">
             </div>
         </div>
     </section>
 
     <section class="info">
-        <h2 class="headline">Adaptives</h2>
-        <img alt="img" data-src="./img/i-8.jpg" loading="lazy">
+        <h2 class="headline" data-aos="fade-up">Adaptives</h2>
+        <img alt="img" data-src="./img/i-8.jpg" data-aos="fade-up" data-aos-delay="200" loading="lazy">
     </section>
 
     <footer>
-        <img data-src="img/heart.png" loading="lazy" alt="heart">
-        <p class="text">If you are thinking about hiring me or would like to discuss a project, get in touch with me
-        </p>
-        <nav class="wrap">
+        <img data-src="img/heart.png" data-aos="fade-up" loading="lazy" alt="heart">
+        <p class="text" data-aos="fade-up" data-aos-delay="100">If you are thinking about hiring me or would like to
+            discuss a project, get
+            in touch with me</p>
+        <nav class="wrap" data-aos="fade-up" data-aos-delay="200">
             <a href="#" target="_blank">FACEBOOK</a>
             <a href="#" target="_blank">VK</a>
             <a href="#" target="_blank">INSTAGRAM</a>
             <a href="#" target="_blank">GMAIL</a>
             <a href="#" target="_blank">BEHANCE</a>
         </nav>
-        <p class="descr">
+        <p class="descr" data-aos="fade-up" data-aos-delay="300">
             UX/UI Design
             <br>
             <br>
@@ -115,12 +114,18 @@
 
             CSS_AOS.type = "text/css";;
             CSS_AOS.rel = 'stylesheet';
-            CSS_AOS.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
+            CSS_AOS.href = "https://unpkg.com/aos@next/dist/aos.css";
             document.getElementsByTagName("head")[0].appendChild(CSS_AOS);
 
-            SCRIPT_AOS.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+            SCRIPT_AOS.src = 'https://unpkg.com/aos@next/dist/aos.js';
             document.body.appendChild(SCRIPT_AOS);
-            SCRIPT_AOS.onload = () => { AOS.init(); }
+            SCRIPT_AOS.onload = () => {
+                AOS.init({
+                    duration: 400,
+                    // mirror: true,
+                    // offset: 50,
+                });
+            }
 
         } else { false }
 
