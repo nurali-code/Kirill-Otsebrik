@@ -13,6 +13,8 @@ header
     left: 0
     z-index: 99999
     width: 100%
+    backdrop-filter: blur(8px)
+    padding: 20px 120px
     .logo
         font-weight: 600
         font-size: 24px
@@ -44,11 +46,6 @@ header
                 color: #838387
                 pointer-events: none
 
-    &.fixed
-        background-color: rgba($black, .7)
-        backdrop-filter: blur(8px)
-        padding: 20px 120px
-
     @media screen and ( max-width: 1500px )
         padding: 40px 72px
         &.fixed
@@ -56,18 +53,15 @@ header
 
     @media screen and ( max-width: 1100px )
         transition: all ease .3s
-        padding: 30px 40px
         height: 69px
-        &.fixed
-            padding: 20px 40px
-
+        padding: 20px 40px
         .logo
             align-self: flex-start
 
         nav,
         .lang
             display: none
-            visibility: hidden
+            animation: menuFade .6s ease forwards
 
         .menu
             width: 28px
@@ -111,14 +105,14 @@ header
                         transform: rotate(-45deg)
 
         &.active
-            height: 100vh
+            height: 60%
             flex-wrap: wrap
-
 
             nav,
             .lang
                 display: block
-                visibility: visible
+                opacity: 0
+                transform: scale(0)
 
             .lang
                 width: 100%
@@ -136,7 +130,7 @@ header
                     text-align: center
                     border: none
                     display: block
-                    padding: 15px
+                    padding: 10px
                     font-size: 20px
                     &.active,
                     &:hover
@@ -145,7 +139,13 @@ header
                         color: #000
 
     @media screen and ( max-width: 700px )
-        height: 49px
-        padding: 20px
-        &.fixed
-            padding: 10px 16px
+        height: 57px
+        padding: 14px 16px
+
+@keyframes menuFade
+    0%
+        opacity: 0
+        transform: scale(0)
+    100%
+        opacity: 1
+        transform: scale(1)

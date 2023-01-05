@@ -6,17 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kirill Otsebrik</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 
     <link rel="stylesheet" href="./css/style.css">
+
+
 </head>
 
 <body>
-    <header class="fixed">
+    <header>
         <a href="./index.html" class="logo">OTSEBRIK</a>
         <button class="menu"><span></span></button>
         <nav>
-            <a href="#main" class="active">ABOUT</a>
+            <a href="#main">ABOUT</a>
             <a href="#projects">PROJECTS</a>
             <a href="#">RESUME</a>
         </nav>
@@ -115,12 +117,24 @@
             Moscow · Remote
         </p>
     </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    
     <script>
-        AOS.init();
+        if (window.innerWidth >= 1100) {
+            const SCRIPT_AOS = document.createElement('script'),
+                CSS_AOS = document.createElement('link');
 
+            CSS_AOS.type = "text/css";;
+            CSS_AOS.rel = 'stylesheet';
+            CSS_AOS.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
+            document.getElementsByTagName("head")[0].appendChild(CSS_AOS);
+
+            SCRIPT_AOS.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+            document.body.appendChild(SCRIPT_AOS);
+            SCRIPT_AOS.onload = () => { AOS.init(); }
+
+        } else { false }
+
+        // LazySizes library
         if ('loading' in HTMLImageElement.prototype) {
             const images = document.querySelectorAll('img[loading="lazy"]');
             images.forEach(img => {
@@ -129,11 +143,9 @@
         } else {
             // Dynamically import the LazySizes library
             const script = document.createElement('script');
-            script.src =
-                'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js';
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js';
             document.body.appendChild(script);
         }
-
 
         var links = document.querySelectorAll('a[href^="#"]'),
             menu = document.querySelector('.menu');
@@ -146,11 +158,9 @@
         links.forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                links.forEach((e) => { e.classList.remove('active') })
+                links.forEach(e => { e.classList.remove('active') })
                 this.classList.add('active');
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
 
