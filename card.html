@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kirill Otsebrik</title>
-    <link rel="stylesheet" href="./css/style.css?ver-2123">
+    <link rel="stylesheet" href="./css/style.css?ver-3456">
 </head>
 
 <body>
@@ -106,7 +106,6 @@
         </p>
     </footer>
 
-
     <script>
         if (window.innerWidth >= 1100) {
             const SCRIPT_AOS = document.createElement('script'),
@@ -122,8 +121,8 @@
             SCRIPT_AOS.onload = () => {
                 AOS.init({
                     duration: 400,
-                    // mirror: true,
-                    // offset: 50,
+                    mirror: false,
+                    once: true,
                 });
             }
 

@@ -228,6 +228,9 @@ main,
 section {
   padding: 80px 120px;
   position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .container {
@@ -391,6 +394,7 @@ hr {
 @media screen and (max-width: 1500px) {
   main,
 section {
+    max-width: 100%;
     padding: 80px 72px;
   }
 }
@@ -455,12 +459,19 @@ header {
   position: fixed;
   background-color: #07080F;
   top: 0;
-  left: 0;
+  left: 50%;
   z-index: 99999;
   width: 100%;
+  -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
+          transform: translateX(-50%);
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
   padding: 20px 120px;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 header .logo {
   font-weight: 600;
@@ -495,6 +506,14 @@ header .lang a.active {
 @media screen and (max-width: 1500px) {
   header {
     padding: 20px 72px;
+    max-width: 100%;
+    margin: 0;
+    left: 0;
+    -webkit-transform: none;
+       -moz-transform: none;
+        -ms-transform: none;
+         -o-transform: none;
+            transform: none;
   }
 }
 @media screen and (max-width: 1100px) {
@@ -584,7 +603,7 @@ header .lang {
             transform: rotate(-45deg);
   }
   header.active {
-    height: 60%;
+    height: 100%;
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
@@ -998,6 +1017,7 @@ footer .wrap a {
   }
   .card {
     padding-top: 150px;
+    padding-bottom: 40px;
   }
   .card::after {
     left: -40px;
@@ -1044,6 +1064,7 @@ footer .wrap a {
   }
   .card {
     padding-top: 120px;
+    padding-bottom: 20px;
   }
   .card::after {
     left: -16px;
