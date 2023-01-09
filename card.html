@@ -37,7 +37,8 @@
                 </p>
             </div>
         </div>
-        <div class="card-gradient" style="background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%)"></div>
+        <div class="card-gradient"
+            style="background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%)"></div>
     </section>
 
     <section>
@@ -108,6 +109,19 @@
     </footer>
 
     <script>
+        // LazySizes library
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Dynamically import the LazySizes library
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
+        
         if (window.innerWidth >= 1100) {
             const SCRIPT_AOS = document.createElement('script'),
                 CSS_AOS = document.createElement('link');
@@ -128,19 +142,6 @@
             }
 
         } else { false }
-
-        // LazySizes library
-        if ('loading' in HTMLImageElement.prototype) {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            images.forEach(img => {
-                img.src = img.dataset.src;
-            });
-        } else {
-            // Dynamically import the LazySizes library
-            const script = document.createElement('script');
-            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js';
-            document.body.appendChild(script);
-        }
 
         var links = document.querySelectorAll('a[href^="#"]'),
             menu = document.querySelector('.menu');
