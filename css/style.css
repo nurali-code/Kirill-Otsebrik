@@ -937,9 +937,10 @@ footer .wrap a {
 .card {
   overflow: hidden;
   max-width: unset;
+  padding-top: 150px;
+  padding-bottom: 0;
 }
-.card::after {
-  content: "";
+.card-gradient {
   display: block;
   width: 100vw;
   height: 500px;
@@ -948,11 +949,6 @@ footer .wrap a {
   z-index: -1;
   left: -120px;
   background-color: #FF9A8B;
-  background-image: -webkit-gradient(linear, left top, right top, from(#FF9A8B), color-stop(55%, #FF6A88), to(#FF99AC));
-  background-image: -webkit-linear-gradient(left, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
-  background-image: -moz-linear-gradient(left, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
-  background-image: -o-linear-gradient(left, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
-  background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
 }
 
 .title-wrap {
@@ -965,7 +961,7 @@ footer .wrap a {
       -ms-flex-align: start;
           align-items: flex-start;
   max-width: 1680px;
-  margin: 160px auto;
+  margin: 80px auto 160px;
 }
 .title-wrap .col {
   width: 41%;
@@ -995,7 +991,7 @@ footer .wrap a {
   .main {
     padding-top: 120px;
   }
-  .card::after {
+  .card-gradient {
     left: -72px;
   }
 }
@@ -1021,7 +1017,7 @@ footer .wrap a {
     padding-top: 150px;
     padding-bottom: 40px;
   }
-  .card::after {
+  .card-gradient {
     left: -40px;
     height: 300px;
   }
@@ -1068,7 +1064,7 @@ footer .wrap a {
     padding-top: 120px;
     padding-bottom: 20px;
   }
-  .card::after {
+  .card-gradient {
     left: -16px;
   }
   .title-wrap {
