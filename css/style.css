@@ -470,7 +470,7 @@ header {
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
   padding: 20px 120px;
-  max-width: 1920px;
+  /* max-width: 1920px; */
   margin: 0 auto;
 }
 header .logo {
